@@ -16,7 +16,7 @@ class App extends Component {
       this.setState({ contacts })
     })
   }
-  
+
   removeContact = (contact) => {
     this.setState((state) => ({
       contacts: state.contacts.filter((c) => c.id !== contact.id)
@@ -36,14 +36,12 @@ class App extends Component {
   render() {
     return (
       <div className='app'>
-        {/* render is needed here because props are passed in */}
         <Route exact path='/' render={() => (
           <ListContacts
             onDeleteContact={this.removeContact}
             contacts={this.state.contacts}
           />
         )}/>
-        {/* no render needed as there are no props */}
         <Route path='/create' render={({ history }) => (
           <CreateContact
             onCreateContact={(contact) => {
