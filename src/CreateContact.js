@@ -10,6 +10,7 @@ class CreateContact extends Component {
     if (this.props.onCreateContact)
       this.props.onCreateContact(values)
   }
+
   render() {
     return (
       <div>

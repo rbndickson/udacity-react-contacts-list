@@ -9,12 +9,14 @@ class App extends Component {
     screen: 'list',
     contacts: []
   }
+
   componentDidMount() {
     ContactsAPI.getAll().then((contacts) => {
       // this.setState({ contacts: contacts }) shorthand:
       this.setState({ contacts })
     })
   }
+  
   removeContact = (contact) => {
     this.setState((state) => ({
       contacts: state.contacts.filter((c) => c.id !== contact.id)
